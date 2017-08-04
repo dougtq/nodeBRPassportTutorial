@@ -19,6 +19,7 @@
   "homepage": "https://github.com/dougtq/nodeBRPassportTutorial#readme",
   "dependencies": {
     "connect-ensure-login": "^0.1.1",
+    "consign": "^0.1.6",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-session": "^1.15.5",

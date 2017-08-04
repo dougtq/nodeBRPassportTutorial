@@ -35,34 +35,6 @@ app.get('/', function(req, res) {
   );
 });
 
-app.get('/account', ensureLoggedIn('/login'), function(req, res) {  
-  console.log(req.user);
-  res.send(
-    '<html><body>Ola ' +
-      req.user.displayName +
-      ' de '+ req.user._json.location +'.<br/><a href="/logout">Logout</a></body></html> '
-  );
-});
-
-app.get('/login', function(req, res) {
-  res.send(
-    '<html><body><a href="/auth/twitter">Login com Twitter</a></body></html>'
-  );
-});
-
-app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
-
-app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get(
-  '/auth/twitter/callback',
-  passport.authenticate('twitter', {
-    successReturnToOrRedirect: '/account',
-    failureRedirect: '/login'
-  })
-);
 
 var server = app.listen(3000);
 console.log('Servidor express iniciado na porta %s', server.address().port);
