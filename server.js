@@ -40,7 +40,7 @@ app.get('/account', ensureLoggedIn('/login'), function(req, res) {
   res.send(
     '<html><body>Ola ' +
       req.user.displayName +
-      ' do usuário '+ req.user.username +'.<br/><a href="/logout">Logout</a></body></html> '
+      ' de '+ req.user._json.location +'.<br/><a href="/logout">Logout</a></body></html> '
   );
 });
 
