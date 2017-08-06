@@ -1,8 +1,9 @@
 const passport = require('passport');
 const TwitterStrategy = require('passport-twitter').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn; 
 const app = require('./src/express');
-require('./src/key_secret'); // Arquivo Separado que seta duas variaveis globais key e o secret para "conectar" ao Twitter
+require('./src/key_secret'); // Arquivo Separado que seta quatro variaveis globais key e o secret para "conectar" ao Twitter
 
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -12,6 +13,18 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
+passport.use(new FacebookStrategy({
+  clientID: global.FB_APP_ID,
+  clientSecret: global.FB_APP_SECRET,
+  callbackURL: "http://localhost:3000/auth/facebook/callback",
+  profileFields: ['id', 'displayName', 'photos', 'email']
+}, function(accessToken, refreshToken, profile, cb) {
+    var user = profile;
+  // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+    return cb(null, user);
+  // });
+}
+));
 
 passport.use(
   new TwitterStrategy(
@@ -27,11 +40,13 @@ passport.use(
       return done(null, user);
     }
   )
+  
 );
+
 
 app.get('/', function(req, res) {
   res.send(
-    '<html><body>Ola mundo<br/><a href="/login">Login</a></body></html>'
+    '<html><body> Inscreva-se pelo Twitter ou Facebook <br/><a href="/login">Login</a></body></html>'
   );
 });
 
