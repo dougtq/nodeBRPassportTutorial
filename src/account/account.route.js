@@ -13,7 +13,6 @@ module.exports = function(application) {
   });
 
   application.get('/facebook/account', ensureLoggedIn('/login'), function(req, res) {
-    console.log(req);
     res.send(
       '<html><body>Ola ' +
         req.user.displayName +
