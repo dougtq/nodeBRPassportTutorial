@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Fondamento');
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave'); 
 
 nav{
-  height: 7%;
+  font-family: 'Sedgwick Ave', cursive;  
+  height: 8%;
   width: 100%;
 }
 
 body{
-  height: 100%;
+  top: 0px;
+  /* height: 100%; */
   width: 100%;
+  background-image: url('./assets/gradient.jpg');
+  
 }
 
 ul{
@@ -17,31 +22,32 @@ ul{
 .body-container{
   width: 100%;
   height: 100%;
-  background-color: white;
 }
 
 
-body, nav, .jumbotron{
+.jumbotron, .content{
   font-family: 'Fondamento', cursive;
+  font-family: 'Sedgwick Ave', cursive;
 }
 
 .btn {
+  font-family: 'Sedgwick Ave', cursive;
   height: 45px;
   width: 150px;
 }
 
-.jumbotron{
-  background-color: white;
-}
-
 .content {
+  top : 50px;
   position: relative;
-  background-image: url('./assets/gradient.jpg');
-  height: 40%;
+  height: 100%;
   font-size: 24px;
+  text-align: center;
 }
 
-.navbar-nav, .navbar, nav, .nav-container{
-  background-color: gainsboro;
-  color: black;
-} 
+.twitter {
+  position: relative;
+  height: 100%;
+  font-size: 24px;
+  text-align: center;
+}
+
