@@ -58,4 +58,8 @@ typings/
 .env
 
 # API Secrete file
-src/API
+pre-build/API/
+
+# API Build files
+src/
+

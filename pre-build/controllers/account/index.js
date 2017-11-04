@@ -1,10 +1,10 @@
-const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
+import { ensureLoggedIn } from 'connect-ensure-login'
 
-module.exports = function (application) {
+module.exports = (application) => {
   application.get('/twitter/account', ensureLoggedIn('/login'), function (req, res) {
     // console.log(req.user);
     res.send(
-      '<html><body>Ola ' +
+      '<html><body>Olá ' +
         req.user.displayName +
         ' de ' +
         req.user._json.location +
@@ -14,7 +14,7 @@ module.exports = function (application) {
 
   application.get('/facebook/account', ensureLoggedIn('/login'), function (req, res) {
     res.send(
-      '<html><body>Ola ' +
+      '<html><body>Olá ' +
         req.user.displayName +
         ' <br/><a href="/logout">Logout</a></body></html> '
     )

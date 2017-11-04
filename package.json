@@ -5,19 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --reporter=spec --require babel-register --bail",
+    "test:coverage": "nyc yarn test",
     "start": "node ./index.js ",
     "dev": "./node_modules/.bin/nodemon ./index.js --require babel-register",
-    "precommit": "./node_modules/.bin/eslint /src/**",
+    "lint": "./node_modules/.bin/eslint /pre-build/**/*.js",
+    "precommit": "yarn lint",
     "prepush": "",
-    "build": ""
+    "clean": "rm -rf ./src",
+    "build": "yarn clean && ./node_modules/.bin/babel pre-build/ --out-dir ./src/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dougtq/nodeBRPassportTutorial.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Douglas Alves <douglas.expalves@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dougtq/nodeBRPassportTutorial/issues"
   },

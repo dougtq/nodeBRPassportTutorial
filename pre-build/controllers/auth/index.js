@@ -1,8 +1,9 @@
-const passport = require('passport')
+import passport from 'passport'
 
-module.exports = function (application) {
-  application.get('/auth/twitter', passport.authenticate('twitter'))
-  application.get(
+module.exports = (app) => {
+  app.get('/auth/twitter', passport.authenticate('twitter'))
+
+  app.get(
     '/auth/twitter/callback',
     passport.authenticate('twitter', {
       successReturnToOrRedirect: '/twitter/account',
@@ -10,8 +11,9 @@ module.exports = function (application) {
     })
   )
 
-  application.get('/auth/facebook', passport.authenticate('facebook', { scope: ['user_friends', 'manage_pages'] }))
-  application.get(
+  app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['user_friends', 'manage_pages'] }))
+
+  app.get(
     '/auth/facebook/callback',
     passport.authenticate('facebook', {
       successReturnToOrRedirect: '/facebook/account',
