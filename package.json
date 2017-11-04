@@ -1,10 +1,15 @@
 {
-  "name": "nodeBRPassportTutorial",
+  "name": "passworthproj",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --reporter=spec --require babel-register --bail",
+    "start": "node ./index.js ",
+    "dev": "./node_modules/.bin/nodemon ./index.js --require babel-register",
+    "precommit": "./node_modules/.bin/eslint /src/**",
+    "prepush": "",
+    "build": ""
   },
   "repository": {
     "type": "git",
@@ -21,10 +26,29 @@
     "connect-ensure-login": "^0.1.1",
     "consign": "^0.1.6",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
     "express-session": "^1.15.5",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-twitter": "^1.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "babel-watch": "^2.0.7",
+    "chai": "^4.1.2",
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "nyc": "^11.3.0",
+    "standard": "^10.0.3"
   }
 }
