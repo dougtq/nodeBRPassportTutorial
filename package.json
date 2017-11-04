@@ -10,7 +10,7 @@
     "dev": "./node_modules/.bin/nodemon ./index.js --require babel-register",
     "lint": "./node_modules/.bin/eslint /pre-build/**/*.js",
     "precommit": "yarn lint",
-    "prepush": "",
+    "prepush": "yarn clean",
     "clean": "rm -rf ./src",
     "build": "yarn clean && ./node_modules/.bin/babel pre-build/ --out-dir ./src/"
   },
