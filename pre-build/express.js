@@ -1,11 +1,12 @@
-let express = require('express')
-let passport = require('passport')
-let session = require('express-session')
-let cookieParser = require('cookie-parser')
-let consign = require('consign')
-let path = require('path')
-let app = express()
+import express from 'express'
+// import passport from 'passport'
+import session from 'express-session'
+import cookieParser from 'cookie-parser'
+import consign from 'consign'
+import path from 'path'
+import { passport } from './passport/'
 
+let app = express()
 app.use(express.static(path.join(__dirname, '/views')))
 app.use(cookieParser('example'))
 app.use(
@@ -16,6 +17,9 @@ app.use(
     //, cookie: { secure: true }
   })
 )
+
+app.set('port', process.env.PORT || 3000)
+app.set('view engine', 'ejs')
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -27,10 +31,10 @@ consign({
   extensions: ['.js'],
   loggingType: 'info'
 })
-  .include('src/controllers/account/')
-  .then('src/controllers/auth/')
-  .then('src/controllers/login/')
-  .then('src/controllers/logout/')
+  .include('pre-build/controllers/account/')
+  .then('pre-build/controllers/auth/')
+  .then('pre-build/controllers/login/')
+  .then('pre-build/controllers/logout/')
   .into(app)
 
 module.exports = app
