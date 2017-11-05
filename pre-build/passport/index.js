@@ -1,13 +1,13 @@
-import * as passport from 'passport'
+import passport from 'passport'
 import { Strategy as FacebookStrategy } from 'passport-facebook'
 import { Strategy as TwitterStrategy } from 'passport-twitter'
-import { data } from '../../API/key_secret'
+import { data } from '../API/key_secret'
 
-passport.serializeUser((user, done) => {
+passport.serializeUser(function (user, done) {
   done(null, user)
 })
 
-passport.deserializeUser((obj, done) => {
+passport.deserializeUser(function (obj, done) {
   done(null, obj)
 })
 
@@ -20,9 +20,8 @@ passport.use(
       profileFields: ['id', 'displayName', 'photos', 'email']
     },
     function (accessToken, refreshToken, profile, cb) {
-      // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      // User.findOrCreate({ facebookId: profile.id }).then(()=>{})
       return cb(null, profile)
-      // });
     }
   )
 )
@@ -41,3 +40,5 @@ passport.use(
     }
   )
 )
+
+export { passport }
