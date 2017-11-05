@@ -27,7 +27,7 @@ consign({
   cwd: process.cwd(),
   locale: 'pt-br',
   logger: console,
-  verbose: true,
+  verbose: false,
   extensions: ['.js'],
   loggingType: 'info'
 })
