@@ -54,3 +54,16 @@ ul{
 .bg-faded{
   background-color: royalblue;
 }
+
+.facebook{
+  height: 100%;
+  width: 45%;
+  background-color: rgb(37, 37, 248);
+  margin: 5pt;
+}
+
+.twitter{
+  height: 100%;
+  width: 45%;
+  background-color: rgb(92, 130, 241);
+}
