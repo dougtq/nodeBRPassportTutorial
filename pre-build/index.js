@@ -2,7 +2,7 @@ const app = require('./express')
 // const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('login')
 })
 
 let server = app.listen(3000)
