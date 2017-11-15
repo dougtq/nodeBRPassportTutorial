@@ -1,4 +1,4 @@
 # PassWorth
 
-## Twitter
-## Facebook
+## Twitter OAuth
+## Facebook OAuth

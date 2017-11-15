@@ -2,17 +2,17 @@
 <header>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
   crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
-  <title> Auth </title>
+  <link rel="stylesheet" >
+  <title> Auth Login Options </title>
 </header>
 
-<body>
+<body style="background-color: whitesmoke;">
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: rgb(234, 235, 237);">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand active">Passport Tutorial</a>
+    <a class="navbar-brand active" href="/">Passport Tutorial</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -25,10 +25,26 @@
     </div>
   </nav>
   <hr>
-  <div class="row" align="center">
-    <div class="twitter"><h1>Twitter</h1></div>
-    <div class="facebook"><h1>Facebook</h1></div>
+<div class="container">
+  <div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="http://hqpictures.net/wp-content/uploads/2015/09/Facebook-Logo-Desktop.png" alt="Make your Oauth with Facebook">
+      <div class="card-body">
+        <h4 class="card-title"><a class="nav-link" href="/auth/facebook">Facebook</a></h4>
+        <p class="card-text">Faça seu login/cadastro com a rede social mais usada do mundo</p>
+        <p class="card-text"><small class="text-muted">Facebook.com</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="http://hqpictures.net/wp-content/uploads/2015/09/Twitter-Logos.png"  alt="Make your Oauth with Twitter">
+      <div class="card-body">
+        <h4 class="card-title"><a class="nav-link" href="/auth/twitter">Twitter</a></h4>
+        <p class="card-text">Faça seu login/cadastro com a rede mais atualizada do mundo</p>
+        <p class="card-text"><small class="text-muted">Twitter.com</small></p>
+      </div>
+    </div>
   </div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   crossorigin="anonymous"></script>
@@ -36,5 +52,4 @@
   crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
   crossorigin="anonymous"></script>
-
 </html>

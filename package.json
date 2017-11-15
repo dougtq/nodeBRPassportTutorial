@@ -1,7 +1,7 @@
 {
   "name": "passworthproj",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple OAuth example with Express",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --reporter=spec --require babel-register --bail",
@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dougtq/nodeBRPassportTutorial.git"
+    "url": "git+https://github.com/dougtq/passworth.git"
   },
   "keywords": [],
   "author": "Douglas Alves <douglas.expalves@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dougtq/nodeBRPassportTutorial/issues"
+    "url": "https://github.com/dougtq/passworth/issues"
   },
-  "homepage": "https://github.com/dougtq/nodeBRPassportTutorial#readme",
+  "homepage": "https://github.com/dougtq/passworth#readme",
   "dependencies": {
     "connect-ensure-login": "^0.1.1",
     "consign": "^0.1.6",
@@ -33,6 +33,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.5",
+    "mongoose": "^4.13.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-twitter": "^1.0.4"
