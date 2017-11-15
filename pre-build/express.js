@@ -1,5 +1,4 @@
 import express from 'express'
-// import passport from 'passport'
 import session from 'express-session'
 import cookieParser from 'cookie-parser'
 import consign from 'consign'
@@ -8,10 +7,11 @@ import { passport } from './passport/'
 
 let app = express()
 app.use(express.static(path.join(__dirname, '/views')))
+app.use(express.static(path.join(__dirname, '/views/styles')))
 app.use(cookieParser('example'))
 app.use(
   session({
-    secret: ' ',
+    secret: 'example',
     resave: false,
     saveUninitialized: true
     //, cookie: { secure: true }
@@ -31,10 +31,10 @@ consign({
   extensions: ['.js'],
   loggingType: 'info'
 })
-  .include('pre-build/controllers/account/')
-  .then('pre-build/controllers/auth/')
-  .then('pre-build/controllers/login/')
-  .then('pre-build/controllers/logout/')
+  .include('./controllers/account/')
+  .then('./controllers/auth/')
+  .then('./controllers/login/')
+  .then('./controllers/logout/')
   .into(app)
 
 module.exports = app
