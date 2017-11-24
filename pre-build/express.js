@@ -7,7 +7,7 @@ import { passport } from './passport/'
 
 let app = express()
 app.use(express.static(path.join(__dirname, '/views')))
-app.use(express.static(path.join(__dirname, '/views/styles')))
+app.use(express.static(path.join(__dirname, '/styles')))
 app.use(cookieParser('example'))
 app.use(
   session({
