@@ -27,14 +27,14 @@ consign({
   cwd: process.cwd(),
   locale: 'pt-br',
   logger: console,
-  verbose: false,
+  verbose: true,
   extensions: ['.js'],
   loggingType: 'info'
 })
-  .include('./controllers/account/')
-  .then('./controllers/auth/')
-  .then('./controllers/login/')
-  .then('./controllers/logout/')
+  .include('src/controllers/account/index.js')
+  .then('src/controllers/auth/index.js')
+  .then('src/controllers/login/index.js')
+  .then('src/controllers/logout/index.js')
   .into(app)
 
-module.exports = app
+export { app }
