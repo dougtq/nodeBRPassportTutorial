@@ -1,13 +1,13 @@
 {
   "name": "passworthproj",
-  "version": "1.0.0",
+  "version": "1.2.3",
   "description": "A simple OAuth example with Express",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --reporter=spec --require babel-register --bail",
     "test:coverage": "nyc yarn test",
-    "start": "node ./index.js ",
-    "dev": "./node_modules/.bin/babel-watch ./index.js ",
+    "start": "node ./loader.js ",
+    "dev": "./node_modules/.bin/babel-watch ./pre-build/index.js ",
     "lint": "./node_modules/.bin/eslint /pre-build/**/*.js",
     "precommit": "yarn lint",
     "prepush": "yarn clean",
@@ -34,6 +34,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.5",
     "mongoose": "^4.13.1",
+    "morgan": "^1.9.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-twitter": "^1.0.4"
