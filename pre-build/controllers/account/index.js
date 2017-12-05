@@ -1,6 +1,6 @@
 import { ensureLoggedIn } from 'connect-ensure-login'
 
-module.exports = (application) => {
+export default (application) => {
   application.get('/twitter/account', ensureLoggedIn('/login'), function (req, res) {
     res.render('logged', { user: req.user })
   })

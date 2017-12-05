@@ -1,10 +1,9 @@
 import passport from 'passport'
 
-module.exports = (app) => {
+export default function (app) {
   app.get('/auth/twitter', passport.authenticate('twitter'))
 
-  app.get(
-    '/auth/twitter/callback',
+  app.get('/auth/twitter/callback',
     passport.authenticate('twitter', {
       successReturnToOrRedirect: '/twitter/account',
       failureRedirect: '/login'
