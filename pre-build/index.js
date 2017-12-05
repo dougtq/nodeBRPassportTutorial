@@ -1,13 +1,12 @@
-const app = require('./express')
+import { app } from './express'
 // const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
 
 app.get('/', (req, res) => {
   res.render('login')
 })
 
-let server = app.listen(3000)
-console.log('Servidor express iniciado na porta %s', server.address().port)
+app.listen(3000, err => {
+  if (err) process.exit(1)
 
-// res.send(
-//   '<html><body> Inscreva-se pelo Twitter ou Facebook <br/><a href="/login">Login</a></body></html>'
-// )
+  console.log('Oauth server running')
+})
